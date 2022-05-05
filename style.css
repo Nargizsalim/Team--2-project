@@ -3,32 +3,39 @@
 }
 .container{
     width: 80%;
-    border: 1px solid red;
+    border: 1px solid black;
     padding: 10px;
     margin: 0 auto;
     text-align: center;
 }
 .search-wrapper{
-    display: inline-block;
+    display: flex;
+    justify-content: center;
     position: relative;
+
 }
 #search{
-    width: 100%;
+    width: 40%;
     height: 40px;
     padding: 10px;
     font-size: 18px;
-    border: 1px solid red;
+    margin: 0 10px;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 #search-btn{
     height: 40px;
+    width: 10%;
     padding: 10px;
-    font-size: 10px;
+    font-size: 15px;
     cursor: pointer;
-    border: 1px solid red;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 .main-content{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     width: 90%;
     margin: 0 auto;
 }
@@ -36,9 +43,10 @@
     width: 200px;
     background-color: white;
     border-radius: 5px;
-    border: 1px solid red;
+    border: 1px solid black;
     margin: 10px;
     cursor: pointer;
+    box-shadow: 5px 5px lightgrey;
 }
 .cocktails-item img{
     width: 100%;
@@ -50,4 +58,33 @@
     position: relative;
     overflow: hidden;
     border-radius: 5px;
+}
+
+.buttons{
+  padding: 5px;  
+  margin-top:  20px;
+}
+button{
+    height: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: lightgray;
+    font-family: sans-serif;
+}
+.category-type{
+  visibility: hidden;
+  margin: 0;
+}
+.cocktail-name{
+ margin: 0;
+ font-size: 16px;
+ font-family: sans-serif;
+ font-weight: bold;
+
+}
+.cocktails-item span{
+    margin: 0;
+    visibility: hidden;
 }

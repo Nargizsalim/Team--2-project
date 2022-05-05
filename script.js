@@ -8,6 +8,9 @@ const ordinaryBtn = document.getElementById ("ordinary-btn")
 const shotBtn = document.getElementById ("shot-btn")
 const coffeeBtn = document.getElementById ("coffee-btn")
 const otherBtn = document.getElementById ("other-btn")
+const allBtn = document.getElementById("all-btn")
+const alcoholicBtn = document.getElementById("alcoholic")
+const nonalcoholicBtn = document.getElementById("non-alcoholic")
 
 
 let cocktailsData= cocktails;
@@ -28,21 +31,81 @@ function renderData(cocktailsData){
 }
 renderData(cocktailsData);
 
-// cocktailBtn.addEventListener("click", function(){
-//     cocktailsData.sort( )
-    
+allBtn.addEventListener("click",function(){
+    renderData(cocktailsData);
+})
 
+cocktailBtn.addEventListener("click", function(){
+    let listOfCocktails = []
+    for(let cocktail of cocktailsData){
+        if(cocktail.strCategory == 'Cocktail'){
+           listOfCocktails.push(cocktail)
+        }
+        
+    }
+    renderData(listOfCocktails)
+})
 
+shotBtn.addEventListener ("click", function(){
+    let listofShots = []
+    for (let shot of cocktailsData){
+        if(shot.strCategory == "Shot"){
+            listofShots.push(shot)
+        }
+    }
+    renderData(listofShots)
+})
 
+ordinaryBtn.addEventListener ("click", function(){
+    let listofordinary = []
+    for (let ordinary of cocktailsData){
+        if(ordinary.strCategory == "Ordinary Drink"){
+            listofordinary.push(ordinary)
+        }
+    }
+    renderData(listofordinary)
+})
 
+coffeeBtn.addEventListener ("click", function(){
+    let listofcoffee = []
+    for (let coffee of cocktailsData){
+        if(coffee.strCategory == "Coffee / Tea"){
+            listofcoffee.push(coffee)
+        }
+    }
+    renderData(listofcoffee)
+})
 
-// function renderData(cocktails) {
-//     for(let item of cocktails) {
-//         createCocktails(item)
-//         // console.log(item, "el")
-//     }
-// }
-// renderData(cocktailsData);
+otherBtn.addEventListener ("click", function(){
+    let listofother = []
+    for (let other of cocktailsData){
+        if(other.strCategory == "Other/Unknown"){
+            listofother.push(other)
+        }
+    }
+    renderData(listofother)
+})
+
+alcoholicBtn.addEventListener ("click", function(){
+    let listofalcoholic = []
+    for (let alcoholic of cocktailsData){
+        if(alcoholic.strAlcoholic == "Alcoholic"){
+            listofalcoholic.push(alcoholic)
+        }
+    }
+    renderData(listofalcoholic)
+})
+
+nonalcoholicBtn.addEventListener ("click", function(){
+    let listofnonalcoholic = []
+    for (let nonalcoholic of cocktailsData){
+        if(nonalcoholic.strAlcoholic == "Non alcoholic"){
+            listofnonalcoholic.push(nonalcoholic)
+        }
+    }
+    renderData(listofnonalcoholic)
+})
+
 
 function createCocktails(item) {
     const el = `
