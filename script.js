@@ -37,14 +37,14 @@ allBtn.addEventListener("click",function(){
 
 cocktailBtn.addEventListener("click", function(){
     let listOfCocktails = []
-    for(let cocktail of cocktailsData){
-        if(cocktail.strCategory == 'Cocktail'){
-           listOfCocktails.push(cocktail)
-        }
-        
-    }
-    renderData(listOfCocktails)
-})
+    cocktailsData.map(items => {
+      // console.log(items)
+      if(items.strCategory === "Cocktail"){
+        listOfCocktails.push(items)
+      }
+    })
+      renderData(listOfCocktails)
+  })
 
 shotBtn.addEventListener ("click", function(){
     let listofShots = []
@@ -57,23 +57,23 @@ shotBtn.addEventListener ("click", function(){
 })
 
 ordinaryBtn.addEventListener ("click", function(){
-    let listofordinary = []
-    for (let ordinary of cocktailsData){
-        if(ordinary.strCategory == "Ordinary Drink"){
-            listofordinary.push(ordinary)
-        }
-    }
-    renderData(listofordinary)
-})
+    let listofOrdinary = []
+    cocktailsData.filter( ordinary => {
+      if(ordinary.strCategory == "Ordinary Drink"){
+        listofOrdinary.push(ordinary)
+      }
+    })
+      renderData(listofOrdinary)
+  })
 
 coffeeBtn.addEventListener ("click", function(){
     let listofcoffee = []
-    for (let coffee of cocktailsData){
-        if(coffee.strCategory == "Coffee / Tea"){
+    cocktailsData.forEach(coffee =>{
+      if(coffee.strCategory == "Coffee / Tea"){
             listofcoffee.push(coffee)
         }
-    }
-    renderData(listofcoffee)
+    })
+       renderData(listofcoffee)
 })
 
 otherBtn.addEventListener ("click", function(){
